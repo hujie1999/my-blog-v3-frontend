@@ -33,7 +33,6 @@ service.interceptors.request.use(
     if (token != '') {
       config.headers['Authorization'] = token
     }
-    // console.log(config)
     return config;
   },
   err => {
@@ -97,8 +96,8 @@ service.interceptors.response.use(
           service(conf).then((res) => {
             try {
               fetch_list.forEach(v => v(store.getters.token))
-            } catch (error) {
-              console.log(err)
+            } catch (e) {
+              console.log(e)
               router.go(0)
             }
             fetch_list = []
