@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2554215 */
+  src: url('iconfont.woff2?t=1621531873886') format('woff2'),
+       url('iconfont.woff?t=1621531873886') format('woff'),
+       url('iconfont.ttf?t=1621531873886') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shejiaotubiao-01:before {
+  content: "\e641";
+  color: rgb(141, 200, 27);
+}
+
+.icon-shejiaotubiao-03:before {
+  content: "\e642";
+  color: #3a8ee6;
+}
+
+.icon-shejiaotubiao-10:before {
+  content: "\e643";
+  color: #3a8ee6;
+}
+
+.icon-facebook:before {
+  content: "\e644";
+}
+
+.icon-shejiaotubiao-14:before {
+  content: "\e645";
+  color: rgb(56, 166, 215);
+}
+
+.icon-shejiaotubiao-06:before {
+  content: "\e646";
+  color: #f56c6c;
+}
+
+.icon-shejiaotubiao-30:before {
+  content: "\e647";
+  color: rgb(112, 138, 151);
+}
+
+.icon-facebook-copy:before {
+  content: "\e663";
+  color: rgb(102, 126, 185);
+}
+
+.icon-dianzan:before {
+  content: "\e656";
+}
+.icon-dianzan-then:before {
+  content: "\e656";
+  color: red;
+}
+.icon-collection-b:before {
+  content: "\e60d";
+  color: red;
+}
+
+.icon-custom-love:before {
+  content: "\e618";
+}
+
+.icon-Star:before {
+  content: "\e662";
+}
+
