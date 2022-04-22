@@ -6,6 +6,8 @@
         :name='name'
         :value="value"
         defaultOpen="preview"
+        codeStyle='paraiso-dark'
+        :ishljs='true'
         style="z-index: 2000; min-height: 100px;"
         :boxShadow="false"
         :editable="false"
@@ -16,6 +18,8 @@
 </template>
 
 <script>
+// import 'mavon-editor/dist/markdown/github-markdown.min.css'
+
 export default {
   name: "MarkDown",
   components: {},
@@ -29,31 +33,19 @@ export default {
   },
   data() {
     return { 
+      markdownOption: {
+        
+      },
     };
   },
   methods: {
-
-    async highlighthandle(){
-      await import('highlight.js/styles/an-old-hope.css');
-      let highlight = document.querySelectorAll('pre code');
-
-      highlight.forEach((block)=>{
-          //10.7.0版本以上语法
-          //  hljs.highlightElement(block);
-          this.$hljs.highlightBlock(block);
-      })
-     
-      
-    },
   },
   mounted () {
   },
   updated(){
-    // this.highlighthandle()
   },
 
   created(){
-    this.highlighthandle()
   },
   watch:{
   }
@@ -61,10 +53,7 @@ export default {
 </script>
 
 <style>
-/* #markdown{
- 
-} */
-/* @import url('https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.0/styles/an-old-hope.min.css'); */
+
 .v-note-wrapper{
   border: none !important;
   box-shadow: none !important;
@@ -97,4 +86,7 @@ export default {
     background-color: mintcream !important;
 
 } */
+.highlight pre, .markdown-body pre {
+    padding: 2px !important;
+}
 </style>
