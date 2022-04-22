@@ -6,8 +6,9 @@
         :name='name'
         :value="value"
         defaultOpen="preview"
-        codeStyle='paraiso-dark'
+        
         :ishljs='true'
+        codeStyle='paraiso-dark'
         style="z-index: 2000; min-height: 100px;"
         :boxShadow="false"
         :editable="false"
