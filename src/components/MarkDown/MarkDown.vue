@@ -65,7 +65,8 @@ export default {
 }
 .markdown-body img{
   height: auto;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
 }
 .scroll-style{
   background: #fff !important;
@@ -89,5 +90,6 @@ export default {
 } */
 .highlight pre, .markdown-body pre {
     padding: 2px !important;
+    background: #2f1e2e !important;
 }
 </style>
