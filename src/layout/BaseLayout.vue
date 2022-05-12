@@ -172,7 +172,7 @@ export default {
 @media screen and (min-width: 0px) and (max-width: 768px) {
   .main{
     height: auto;
-    width:90%;
+    width:95%;
   }
   .aside{
       display: none;

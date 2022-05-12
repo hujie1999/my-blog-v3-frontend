@@ -1,7 +1,9 @@
 <template>
     <div id="blog-aside">
         <!-- 广告区域 -->
-        <div class="advertisement-block">
+        <div class="advertisement-block"
+        v-show="handleShowAdv"
+        >
             <div class="adv-tittle">
                 <h3 v-text="adv_info.Adv_Tittle"></h3>
             </div>
@@ -26,7 +28,7 @@
         </div>
         <!-- 文章归档区域-->
         <div class="arranged-block">
-            <h2 style="padding-left:15px">归档</h2>
+            <p class="tittle" style="padding-left:15px">归档</p>
             <div
             v-for="(item,index) in arranged_blogs_list"
             :key="index"
@@ -87,7 +89,14 @@ export default {
                 Adv_Introduction:'',
             },
             //广告列表
-            adv_list:[]
+            adv_list:[],
+            //展示广告位的路由
+            show_adv:['/home']
+        }
+    },
+    computed:{
+        handleShowAdv(){
+            return this.show_adv.includes(this.$route.path)
         }
     },
     methods: {
@@ -252,6 +261,11 @@ export default {
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgb(0 0 0 / 12%);
     word-wrap: break-word;
+}
+.arranged-block .tittle{
+    font-size: 22px;
+    font-weight: bold;
+    /* padding: 5px 0px; */
 }
 /* .year-area{
     word-wrap: break-word;

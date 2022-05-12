@@ -152,3 +152,14 @@ export function getadvertisementAPI(){
     return http.get('/getadvertisement')
 }
 
+/**
+ * 友链
+ * hujie
+ * 2022.05.12
+ */
+
+//获取全部友链
+export function getallfriendlinkAPI(){
+    return http.get('/getallfriendlink')
+}
+

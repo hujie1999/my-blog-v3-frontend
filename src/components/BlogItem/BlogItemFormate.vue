@@ -164,7 +164,7 @@ export default {
   min-height: 100px;
   max-height: 550px;
   overflow: hidden;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 .blog-summary{
   width: 100%;

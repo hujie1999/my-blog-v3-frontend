@@ -6,7 +6,7 @@
         :name='name'
         :value="value"
         defaultOpen="preview"
-        
+       
         :ishljs='true'
         codeStyle='paraiso-dark'
         style="z-index: 2000; min-height: 100px;"
@@ -78,18 +78,21 @@ export default {
 .markdown-body {
     font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", 
     "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-    font-size: 14px !important;
+    /* font-size: 14px !important; */
 }
-.markdown-body code {
-    font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace;
-    font-size: 14px;
+.markdown-body pre code {
+    font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace !important;
+    font-size: 15px;
 }
 /* .markdown-body .highlight pre, .markdown-body pre {
     background-color: mintcream !important;
 
 } */
 .highlight pre, .markdown-body pre {
-    padding: 2px !important;
-    background: #2f1e2e !important;
+  padding: 5px 2px !important;
+  background: #2f1e2e !important;
 }
+/* .highlight pre, .markdown-body pre code {
+} */
+
 </style>

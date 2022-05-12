@@ -13,12 +13,20 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/user':{
-        target: 'http://server.xiaohai-learn.pub:8889/api/user/',
-        // target: 'http://localhost:8889/api/user/',
+        // target: 'http://server.xiaohai-learn.pub:8889/api/user/',
+        target: 'http://localhost:8889/api/user/',
         changeOrigin: true,
         ws:true,
         pathRewrite: {
           '^/user': ''
+        }
+      },
+      '/image':{
+        target: 'http://localhost:8889/api/image/',
+        changeOrigin: true,
+        ws:true,
+        pathRewrite: {
+          '^/image': ''
         }
       }
     },

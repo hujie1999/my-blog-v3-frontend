@@ -39,6 +39,7 @@ const router =  new Router({
           name:'laboratory',
           meta: { 
             // requiresAuth: true
+            keepAlive:true
            },
           component:()=>import('../views/Laboratory/Laboratory.vue')
 
