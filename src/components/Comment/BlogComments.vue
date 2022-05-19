@@ -11,8 +11,8 @@
           type="textarea"
           placeholder="请输入内容"
           v-model="textarea"
-          :autosize="{ minRows: 3, maxRows: 6 }"
-          maxlength="300"
+          :autosize="{ minRows: 3}"
+          maxlength="1000"
           show-word-limit
         >
         </el-input>
@@ -149,7 +149,13 @@
               </span>
             </div>
           </div>
-
+          <appendreplytextarea
+          v-if="handleAppendTextAreaShow(items['Comment_Id'])"
+          :replyedpersoninfo="replyed_person_name"
+          @transReply="handleReply"
+          @transCancel="handleCancel"
+          >
+          </appendreplytextarea>
           <!-- 第二层评论 -->
           <span v-show="handleAppendShow(items['Comment_Id'])">
             
@@ -270,21 +276,33 @@
                 </div>
               </div>
               
+
+              <appendreplytextarea
+              
+              v-if="handleAppendTextAreaShow(it['Comment_Id'])"
+              
+              :replyedpersoninfo="replyed_person_name"
+              @transReply="handleReply"
+              @transCancel="handleCancel"
+              >
+              </appendreplytextarea>
             </div>
+
+
           </span>
           <hr />
         </div>
       </div>
     </div>
 
-    <!-- 写回复时展现的textarea -->
-    <replytextarea
+    <!-- 写回复时展现的textarea 弃用-->
+    <!-- <replytextarea
       v-if="replaytextarea_show"
       :replyedpersoninfo="replyed_person_name"
       @transReply="handleReply"
       @transCancel="handleCancel"
     >
-    </replytextarea>
+    </replytextarea> -->
   </div>
 </template>
 
@@ -295,6 +313,7 @@ import {
   addcommentcountAPI
 } from "../../http/api";
 import ReplyTextArea from "../Textarea/ReplyTextArea.vue";
+import AppendReplyTextArea from '../Textarea/AppendReplyTextArea.vue'
 export default {
   name: "BlogComments",
   data() {
@@ -313,7 +332,10 @@ export default {
       //写博客评论 的锁
       writecomment_locker: false,
       //显示 隐藏 回复的textarea
-      replaytextarea_show: false,
+      // replaytextarea_show: false,
+
+      //reply text commentid
+      reply_textarea_commentid: '',
       //回复人信息+回复信息
       reply_info: {},
       //回复的层级
@@ -347,9 +369,15 @@ export default {
         return this.show_append_data.includes(id);
       };
     },
+    handleAppendTextAreaShow(id) {
+      return (id) =>{
+        return this.reply_textarea_commentid == id
+      }
+    }
   },
   components: {
     replytextarea: ReplyTextArea,
+    appendreplytextarea : AppendReplyTextArea
   },
   methods: {
     showAppend(id) {
@@ -447,7 +475,8 @@ export default {
     },
     //点击 回复按钮
     wirteReply(obj,level,info) {
-      this.replaytextarea_show = true;
+      // this.replaytextarea_show = true;
+      this.reply_textarea_commentid = obj.Father_Comment_Id
       this.reply_level = level
       this.replyed_person_name =info.Parent_Person_Name
       
@@ -497,10 +526,11 @@ export default {
           if (res.data.code == 1012) {
             // console.log("回复成功");
             this.replySuccessed()
+            this.handleCancel()
             this.$emit("transWriteComment",this.reply_level);
             //当回复后，用于打开显示更多按钮,展示子评论
             this.showAppend(this.reply_info['Root_Comment_Id'])
-            this.replaytextarea_show = false;
+            // this.replaytextarea_show = false;
             this.replyed_person_name = ''
             this.reply_info = {}
             this.commentCountPlusOne()
@@ -524,7 +554,8 @@ export default {
       },0)
     },
     handleCancel() {
-      this.replaytextarea_show = false;
+      this.reply_textarea_commentid = ''
+      // this.replaytextarea_show = false;
       this.replyed_person_name = ''
     },
   },
@@ -703,7 +734,7 @@ export default {
   height: 20px;
   line-height: 20px;
   border-radius: 12px;
-  background: rgb(211, 210, 210);
+  background: rgb(241, 241, 241);
   text-align: center;
   cursor: pointer;
 }

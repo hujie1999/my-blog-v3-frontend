@@ -90,7 +90,7 @@ export default {
 }
 /* tab的 active 类 */
 .tab-active {
-  box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%) !important;
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%) !important;
   /* margin-right: 0 !important; */
   padding: 0px 0px 6px 0px !important;
   background: #fafafa !important;

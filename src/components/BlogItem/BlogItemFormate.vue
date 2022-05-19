@@ -4,7 +4,9 @@
         <div class="title-area">
             <span v-text="blog['Blog_Title']"></span>
         </div>
-        <div class="blog-class">
+        <div class="blog-class"
+        v-if="showclass"
+        >
           <span v-text="blog['Blog_Class']"></span>         
         </div>
     </div>
@@ -62,6 +64,10 @@ export default {
   props: {
     blog:{
       type:Object
+    },
+    showclass:{
+      type: Boolean,
+      default: true
     }
   },
   methods: {
@@ -87,17 +93,19 @@ export default {
 <style>
 @import url('../../assets/incos/iconfont.css');
 #item-area {
-  width: 99%;
+  box-sizing: border-box;
+  width: 100%;
   height: auto;
   background: #fff;
   padding:0px 4px;
   border-radius: 5px;
   margin-bottom: 30px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
   overflow: hidden;
 }
 #item-area:hover{
-  box-shadow: 0 0 10px rgb(255 193 7 / 25%);
+  /* box-shadow: 0 0 10px rgb(255 193 7 / 25%); */
+  box-shadow: 0 0 10px rgb(0 0 0 / 10%); 
 }
 .blog-title{
     height: auto;
@@ -107,13 +115,14 @@ export default {
     text-indent: 1em;
     justify-content: flex-start;  
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.5px solid #e7ebf1;
     position: relative;
 }
-.title-area span{
-  padding-right: 60px;
+.title-area{
+  width: auto;
   font-size: 24px;
   font-weight: 600;
+  flex-grow: 1;
 }
 .blog-class{
   width: auto;
@@ -121,10 +130,7 @@ export default {
   padding: 0px 10px;
   height: 34px;
   background: #82D8CF;
-  position: absolute;
   flex: none;
-  right: 0;
-  /* bottom: 0; */
   border-radius: 15px 0px 0px 15px;
   display: flex;
   align-items: center; 
@@ -136,35 +142,31 @@ export default {
   color: #000;
 }
 .blog-author-date-others{
-  
+  height: auto;
+  width: auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   padding: 0 10px;
-  border-top: 1px solid #eee;
 }
 .blog-author-date-others i{
   font-size: 12px;
   display: flex;
   align-items: center;
-  /* padding-right: 30px; */
+  margin: 0;
+  padding: 0;
 }
 .blog-author-date-others span{
   color: grey;
   font-size: 12px;
-  /* display: flex;
-  align-items: center;
-  flex-wrap: wrap; */
 }
- /*这里设置editormd在主页面展示summary的最大高度(max-height) */
 .blog-summary-area{
   width: auto;
   height: auto;
   min-height: 100px;
-  max-height: 550px;
   overflow: hidden;
-  /* padding-bottom: 20px; */
+  border-bottom: 0.5px solid #e7ebf1;
 }
 .blog-summary{
   width: 100%;
@@ -177,14 +179,9 @@ export default {
     display: flex;
     align-items: center; 
     justify-content: flex-start;
-    /* padding: 0 1em; */
-    /* border-radius: 10px; */
-    border-top: 1px solid #eee;
     position: relative;
     padding:5px 90px 5px 10px;
     flex-wrap: wrap;
-    
- /* background-color: chocolate; */
 }
 .blog-tag .readmore{
   position: absolute;

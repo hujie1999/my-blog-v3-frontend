@@ -378,7 +378,7 @@ export default {
   justify-content: space-around;
   height: 80px;
   background: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 .nav a {
   color: #000000;
@@ -428,7 +428,8 @@ export default {
 }
 /* 导航的高亮 active类 */
 .navactive {
-  box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0 0 10px 1px rgb(0 0 0 / 10%);
+  font-weight: bold;
   background: #fafafa;
 }
 /* .nav-search{
@@ -477,7 +478,7 @@ export default {
   z-index: 2001;
   background: #fff;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 5%);
   position: fixed;
 }
 .hidden-list ul {

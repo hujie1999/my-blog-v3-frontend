@@ -26,6 +26,7 @@
         >
             <blogitemformate
             :blog="item"
+            :showclass="true"
             >
             </blogitemformate>
         </span>
@@ -121,6 +122,8 @@ export default {
 #home-page{
     width: 100%;
     height: auto;
+    box-sizing: border-box;
+    padding-top: 20px;
 }
 #home-page .empty-block{
     height: 400px;

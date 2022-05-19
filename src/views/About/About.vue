@@ -23,7 +23,7 @@
       v-show="about_info.length!=0"
       >
         <div class="title-area">
-          <p v-text="about_info.About_Tittle"></p>
+          <span v-text="about_info.About_Tittle"></span>
         </div>
         <div class="markdown-area">
           <markdown
@@ -72,8 +72,7 @@ export default {
   width: 100%;
   min-height: 600px;
   border: none;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
 .empty-fromat-control{
   height: 400px;
@@ -96,12 +95,14 @@ export default {
   overflow: hidden;
   background: #fff !important;
   padding-bottom: 20px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 #about-page .title-area{
+  padding: 20px 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 25px !important;
-  border-bottom: 1px solid #e7ebf1;
+  /* border-bottom: 1px solid #e7ebf1; */
 }
 </style>

@@ -1,31 +1,29 @@
 <template>
-  <div id="reply-text-area">
-      <!-- 写回复时的textarea -->
-      <div class="write-reply-textarea">
+  <div id="append-textarea">
+      <!-- 这个回复组件，是append在一级或者二级评论下的 -->
       <div>
-        <el-input
+      <el-input
             type="textarea"
             :placeholder="dealReplyedPersonInfo"
             v-model="reply"
-            :autosize="{ minRows: 3, maxRows: 6}"
+            :autosize="{ minRows: 3}"
             maxlength="1000"
             show-word-limit
           >
         </el-input>
-      </div>
       <div
       class="btn-format-control"
       >
         <el-button
         type="primary"
-        size="medium"
+        size="mini"
         @click="submitReply"
         >
         提交回复
         </el-button>
         <el-button
-        type="warning"
-        size="medium"
+        type="info"
+        size="mini"
         @click="cancelShow"
         >
         取消
@@ -37,9 +35,9 @@
 
 <script>
 export default {
-    name:'ReplyTextArea',
-    data(){
-        return{
+    name:'AppendReplyTextArea',
+    data() {
+        return {
             reply:'',
         }
     },
@@ -69,31 +67,17 @@ export default {
 }
 </script>
 
-<style>
-#reply-text-area{
+<style scoped>
+#append-textarea{
     height: auto;
-    width: auto;
-    display: flex;
-    justify-content: center;
-}
-#reply-text-area .write-reply-textarea{
+    width: 100%;
     padding: 10px;
-  /* min-height: 300px; */
-  height: auto;
-  width: 450px;
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  z-index: 2001;
-  position: fixed;
-  bottom: 15%;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-top: 0.5px solid #e7ebf1;
 }
 .btn-format-control{
-    /* display: flex; */
-    margin: 10px 0 0 0;
-}
-@media screen and (min-width: 0px) and (max-width: 768px) {
-    #reply-text-area .write-reply-textarea{
-        width: 95%;
-    }
+    display: flex;
+    padding-top: 10px;
 }
 </style>

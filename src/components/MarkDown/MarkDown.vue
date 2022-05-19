@@ -61,7 +61,7 @@ export default {
 }
 .v-note-wrapper .v-note-panel .v-note-show .v-show-content, 
 .v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
-  padding: 8px 5px 15px 5px !important;
+  padding: 0px 5px 0px 5px !important;
 }
 .markdown-body img{
   height: auto;

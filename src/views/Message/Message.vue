@@ -21,7 +21,7 @@
       ref="message_block"
       >
           <div class="title-area">
-              <p v-text="content.Message_Title"></p>
+              <span v-text="content.Message_Title"></span>
           </div>
         <div class="markdown-area">
           <markdown
@@ -176,6 +176,7 @@ export default {
   width: 100%;
   min-height: 600px;
   border: none;
+  padding-top: 20px;
   /* background: #fff; */
 }
 .empty-fromat-control{
@@ -200,7 +201,7 @@ export default {
   overflow: hidden;
   background: #fff;
   padding-bottom: 20px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 /* 留言板区域 格式控制 */
 .message-formate-control{
@@ -213,7 +214,7 @@ export default {
     overflow: hidden;
     background: #fff;
     overflow: hidden;
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 .pagenation-formate-control{
   height: auto;
@@ -223,9 +224,10 @@ export default {
   
 }
 #message-page .title-area{
+  padding: 20px 0px;
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 25px !important;
-  border-bottom: 1px solid #e7ebf1;
 }
 </style>

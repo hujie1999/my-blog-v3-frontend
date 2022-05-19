@@ -31,10 +31,10 @@ export default {
 <style scoped>
 #user-index{
     overflow: auto;
-    
+    height:calc(100vh - 120px);
     /* height: 100%;
     width: auto; */
-    height:100%;
+    /* height:100%; */
     width: 100%;
 }
 </style>

@@ -393,7 +393,7 @@ export default {
   /* border: 1px solid #fff; */
   border-radius: 5px;
   background: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 #details-page .formate-control .empty-blog {
   display: flex;
@@ -410,7 +410,7 @@ export default {
   border: 1px solid #fff;
   border-radius: 5px;
   background: #fff;
-  box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 .title-area {
   width: auto;

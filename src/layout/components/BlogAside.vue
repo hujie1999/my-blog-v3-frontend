@@ -10,9 +10,7 @@
             <div class="adv-intro">
                 <p v-text="adv_info.Adv_Introduction"></p>
             </div>
-            <div class="adv-img"
-            v-if="adv_list&&adv_list.length>0"
-            >
+            <div class="adv-img">
                 <span
                 class="adv-img-control"
                 v-for="(item,index) in adv_list"
@@ -27,8 +25,14 @@
             
         </div>
         <!-- 文章归档区域-->
+        <div class="art-tittle">
+            <span class="tittle">
+                归档
+                <i class="el-icon-s-data"></i>
+            </span>
+        </div>
         <div class="arranged-block">
-            <p class="tittle" style="padding-left:15px">归档</p>
+            
             <div
             v-for="(item,index) in arranged_blogs_list"
             :key="index"
@@ -184,6 +188,8 @@ export default {
     created(){
         this.getArrangedBlogs()
         this.getAdvertisement()
+    },
+    mounted(){
     }
 }
 </script>
@@ -195,16 +201,15 @@ export default {
 }
 .advertisement-block{
     width: auto;
-    min-height: 400px;
     height: auto;
     background: #fff;
     border: 1px solid #fff;
     border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+    /* margin-bottom: 10px; */
+    box-shadow: 0 0 5px rgb(0 0 0 / 5%);
     word-wrap: break-word;
-    padding-bottom: 20px;
     overflow: hidden;
+    margin-top: 20px;
 }
 
 .adv-tittle{
@@ -226,7 +231,7 @@ export default {
     width: auto;
 }
 .adv-img-control{
-    min-height: 300px;
+    /* min-height: 300px; */
     height: auto;
     width: 94%;
     margin: 0px auto;
@@ -252,20 +257,22 @@ export default {
     width: 100%;
     /* height: 600px; */
     height: auto;
-    min-height: 500px;
+    /* min-height: 500px; */
     /* overflow: auto; */
     background: #fff;
     border: 1px solid #fff;
     border-radius: 5px;
     overflow: hidden;
     margin-bottom: 10px;
-    box-shadow: 0 0 10px rgb(0 0 0 / 12%);
+    box-shadow: 0 0 5px rgb(0 0 0 / 5%);
     word-wrap: break-word;
 }
-.arranged-block .tittle{
-    font-size: 22px;
+.art-tittle{
+    padding: 5px 0px;
+}
+.art-tittle .tittle{
+    font-size: 20px;
     font-weight: bold;
-    /* padding: 5px 0px; */
 }
 /* .year-area{
     word-wrap: break-word;

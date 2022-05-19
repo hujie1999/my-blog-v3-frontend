@@ -57,6 +57,7 @@
           >
             <blogitemformate
             :blog="blog"
+            :showclass="false"
             >
             </blogitemformate>
         </span>
@@ -235,6 +236,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 0 0 5px rgb(0 0 0 / 5%);
 }
 #about-page .blog-tab-block{
   height: auto;

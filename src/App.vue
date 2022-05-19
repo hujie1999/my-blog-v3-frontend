@@ -41,6 +41,7 @@ body,html{
   padding: 0px;
   width:100%;
   height: 100%;
+  box-sizing: border-box;
 }
 /* 背景图片预设参数 */
 html{

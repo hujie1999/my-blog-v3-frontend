@@ -562,7 +562,8 @@ export default {
 #user-iformation{
     overflow: auto;
     padding-left: 10px;
-    height:100%;
+    /* height:100%; */
+    height:calc(100vh - 120px);
     width: 100%;
 }
 #user-iformation .el-input{

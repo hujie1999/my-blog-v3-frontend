@@ -1,5 +1,12 @@
 <template>
   <div id="searched-page">
+
+      <div class="tittle">
+        <span>
+            文章搜索
+            <i class="el-icon-document"></i>
+        </span>
+      </div>
       <!-- 搜索结果为空时 -->
       <div class="empty-blog-blok"
       v-show="bloglist.length==0 && load==false"
@@ -255,7 +262,15 @@ export default {
     height: auto;
     width: auto;
 }
-
+.tittle{
+  height: auto;
+  width: auto;
+  padding: 10px 0px;
+}
+.tittle span{
+    font-size: 20px;
+    font-weight: bold;
+}
 .empty-blog-blok{
     height: 400px;
     width: auto;
