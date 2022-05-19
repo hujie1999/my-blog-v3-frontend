@@ -247,10 +247,8 @@ export default {
     /* cursor: pointer; */
 }
 .adv-img img{
-    min-height: 295px;
-    min-width: 100%;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
     background: #fff;
 }
 .arranged-block{
