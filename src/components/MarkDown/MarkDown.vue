@@ -6,9 +6,8 @@
         :name='name'
         :value="value"
         defaultOpen="preview"
-       
         :ishljs='true'
-        codeStyle='paraiso-dark'
+        codeStyle='stackoverflow-dark'
         style="z-index: 2000; min-height: 100px;"
         :boxShadow="false"
         :editable="false"
@@ -19,8 +18,6 @@
 </template>
 
 <script>
-// import 'mavon-editor/dist/markdown/github-markdown.min.css'
-
 export default {
   name: "MarkDown",
   components: {},
@@ -54,14 +51,13 @@ export default {
 </script>
 
 <style>
-
 .v-note-wrapper{
   border: none !important;
   box-shadow: none !important;
 }
 .v-note-wrapper .v-note-panel .v-note-show .v-show-content, 
 .v-note-wrapper .v-note-panel .v-note-show .v-show-content-html {
-  padding: 0px 5px 0px 5px !important;
+  padding: 5px 10px !important;
 }
 .markdown-body img{
   height: auto;
@@ -76,23 +72,20 @@ export default {
   display: none;
 }
 .markdown-body {
-    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", 
+  font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", 
     "Microsoft Yahei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-    /* font-size: 14px !important; */
+  /* font-size: 14px !important; */
 }
 .markdown-body pre code {
-    font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace !important;
-    font-size: 15px;
+  font-family: SFMono-Regular,Consolas,"Liberation Mono",Menlo,Courier,monospace !important;
+  font-size: 15px;
 }
-/* .markdown-body .highlight pre, .markdown-body pre {
-    background-color: mintcream !important;
-
-} */
-.highlight pre, .markdown-body pre {
-  padding: 5px 2px !important;
-  background: #2f1e2e !important;
+.markdown-body .highlight pre, .markdown-body pre {
+  padding: 8px 4px !important;
+  display: inline-block !important;
+  width:100% !important;
+  background: #1c1b1b !important;
+  color: #fff;
+  border-radius: 6px !important;
 }
-/* .highlight pre, .markdown-body pre code {
-} */
-
 </style>

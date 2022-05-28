@@ -195,7 +195,8 @@ export default {
 .formate-control {
   width: auto;
   height: auto;
-  min-height: 400px;
+  min-height: 300px;
+  padding: 0px 2px;
   border: 1px solid #fff;
   border-radius: 5px;
   overflow: hidden;

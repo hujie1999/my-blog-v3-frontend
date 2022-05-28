@@ -119,10 +119,11 @@ export default {
   margin: 10px 0px;
   height: auto;
   width: 100%;
-  min-height: 350px;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgb(0 0 0 / 5%);
+  
+  /* min-height: 350px; */
+  /* background: #fff; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 0 5px rgb(0 0 0 / 5%); */
 }
 .empty-friend-link-area{
   box-sizing: border-box;
@@ -144,7 +145,8 @@ export default {
   margin: 10px 5px;
   padding: 5px;
   border-radius: 5px;
-  border: 1px solid #f1f0f0;
+  border: 1px solid rgba(255,255,255,0.2);
+  background-color: rgba(255,255,255,0.2);
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -155,9 +157,8 @@ export default {
   color: #000;
 }
 .friends-link-item:hover{
-  background: #fafafa;
-  /* background: #e7f0f0; */
-  
+  background-color: rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.4);  
 }
 .link-avatar{
   box-sizing: border-box;

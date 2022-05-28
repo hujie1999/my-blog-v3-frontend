@@ -89,7 +89,8 @@ export default {
 #about-page .formate-control {
   width: auto;
   height: auto;
-  min-height: 400px;
+  padding: 0px 2px;
+  min-height: 300px;
   border: 1px solid #fff;
   border-radius: 5px;
   overflow: hidden;

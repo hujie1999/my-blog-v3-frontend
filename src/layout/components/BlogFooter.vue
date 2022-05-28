@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
      <div class="block">
-       <p>本站已运行 {{runtime}}</p>
+       <p>{{runtime}}</p>
        <!-- <p>Email.1256215927@qq.com</p> -->
        <p>
          <a href="https://beian.miit.gov.cn/" target="_blank">
@@ -19,29 +19,39 @@ export default {
     return {
       // createdate:'2022-04-24',
       createdate:'1650758400000',
-      nowdate:'',
       runtime:''
     }
   },
   methods: {
-    initCreateDate() {
-      this.nowdate = new Date().getTime()
-    },
     execRunTime() {
-      this.runtime = this.$moment(this.nowdate-this.createdate).format('D天H时m分s秒')
+      let seconds = 1*1000
+      let minutes = seconds*60
+      let hours = minutes*60
+      let days = hours*24
+      let years = days*365
+
+      let today = new Date().getTime()
+      let diff = today-this.createdate
+      let diffYears = Math.floor(diff/years);
+      let diffDays = Math.floor((diff/days)+diffYears*365);
+      let diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+      let diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+      let diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+      this.runtime = `本站已运行 ${diffDays}天${diffHours}时${diffMinutes}分${diffSeconds}秒`
     }
   },
   created() {
-    this.initCreateDate()
+    this.execRunTime()
   },
   mounted() {
     const timmer = setInterval(()=>{
       this.nowdate+=1000
       this.execRunTime()
     },1000)
-    this.$once('beforeDestroy',()=>{
-      clearInterval(timmer)
-    })
+    //运行时间计算不销毁
+    // this.$once('beforeDestroy',()=>{
+    //   clearInterval(timmer)
+    // })
   },
   
 }
