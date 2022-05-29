@@ -31,7 +31,9 @@
                 <i class="el-icon-s-data"></i>
             </span>
         </div>
-        <div class="arranged-block">
+        <div class="arranged-block"
+        v-fixElement="['scroll',100,10]"
+        >
             
             <div
             v-for="(item,index) in arranged_blogs_list"
@@ -196,8 +198,9 @@ export default {
 
 <style scoped>
 #blog-aside{
-    width: auto;
+    width: 100%;
     height: auto;
+    box-sizing: border-box !important;
 }
 .advertisement-block{
     width: auto;
@@ -252,11 +255,13 @@ export default {
     background: #fff;
 }
 .arranged-block{
-    width: 100%;
-    /* height: 600px; */
+    /* width: auto; */
+    width: auto;
+    max-height: 600px;
     height: auto;
-    /* min-height: 500px; */
-    /* overflow: auto; */
+    overflow: scroll !important;
+
+    display: block !important;
     background: #fff;
     border: 1px solid #fff;
     border-radius: 5px;
@@ -264,6 +269,9 @@ export default {
     margin-bottom: 10px;
     box-shadow: 0 0 5px rgb(0 0 0 / 5%);
     word-wrap: break-word;
+}
+.arranged-block::-webkit-scrollbar{
+  display: none;
 }
 .art-tittle{
     padding: 5px 0px;

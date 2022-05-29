@@ -14,6 +14,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 
 Vue.config.productionTip = false
+
+//全局自定义指令
+import './utils/directives/index'
+
 Vue.use(ElementUI)
 Vue.use(MavonEditor)
 
