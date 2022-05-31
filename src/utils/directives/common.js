@@ -52,12 +52,10 @@ function fixElement (el,vnode,delay,offset){
 			//元素距离可视窗口顶部高度           
 			const eleH = el.getBoundingClientRect().top
 			const scrollH = document.documentElement.scrollTop || document.body.scrollTop
-			// const dis = document.defaultView.getComputedStyle(el.parentNode.parentNode,null).getPropertyValue('display')
 			//向下滚动时判断
 			if(eleH<=0+offset){
 				el.style.position = 'fixed'
 				el.style.top = 0+offset+'px'
-				
                 el.style.width = el.parentNode.offsetWidth+'px'	
 			}
 			//向上滚动时判断

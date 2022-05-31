@@ -25,51 +25,55 @@
             
         </div>
         <!-- 文章归档区域-->
-        <div class="art-tittle">
-            <span class="tittle">
-                归档
-                <i class="el-icon-s-data"></i>
-            </span>
-        </div>
-        <div class="arranged-block"
-        v-fixElement="['scroll',100,10]">
-            
-            <div
-            v-for="(item,index) in arranged_blogs_list"
-            :key="index"
-            >
-                <span class="year-area">
-                    <h2
-                    @click="showHiddenItem(item.year)"
-                    >
-                        {{item.year}}
-                        <span class="blog-total">
-                            ({{item.children.length}}) 篇
-                        </span>
-                    </h2>
+        <div 
+        v-fixElement="['scroll',100,0]"
+        >
+            <div class="art-tittle">
+                <span class="tittle">
+                    归档
+                    <i class="el-icon-s-data"></i>
                 </span>
-                
-
-                 <span v-show="show_year.includes(item.year)">
-                     <el-timeline>
-                        <el-timeline-item
-                        v-for="(it,index) in item.children"
-                        :key="index"
-                        
-                        color="#00bcd4"
-
-                        :timestamp="it.Blog_Createtime">
-                        <span 
-                        class="blog-item"
-                        @click.stop="linkToDetails(it.Blog_Id)"
-                        >
-                            {{it.Blog_Title}}
-                        </span>
-                        </el-timeline-item>
-                    </el-timeline>
-                 </span>
             </div>
-           
+            <div class="arranged-block"
+            >
+                
+                <div
+                v-for="(item,index) in arranged_blogs_list"
+                :key="index"
+                >
+                    <span class="year-area">
+                        <h2
+                        @click="showHiddenItem(item.year)"
+                        >
+                            {{item.year}}
+                            <span class="blog-total">
+                                ({{item.children.length}}) 篇
+                            </span>
+                        </h2>
+                    </span>
+                    
+
+                    <span v-show="show_year.includes(item.year)">
+                        <el-timeline>
+                            <el-timeline-item
+                            v-for="(it,index) in item.children"
+                            :key="index"
+                            
+                            color="#00bcd4"
+
+                            :timestamp="it.Blog_Createtime">
+                            <span 
+                            class="blog-item"
+                            @click.stop="linkToDetails(it.Blog_Id)"
+                            >
+                                {{it.Blog_Title}}
+                            </span>
+                            </el-timeline-item>
+                        </el-timeline>
+                    </span>
+                </div>
+            
+            </div>
         </div>
     </div>
 </template>
