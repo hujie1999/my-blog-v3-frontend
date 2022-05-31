@@ -258,7 +258,7 @@ export default {
 .arranged-block{
     /* width: auto; */
     width: auto;
-    max-height: 600px;
+    max-height: 500px;
     height: auto;
     overflow: scroll !important;
 

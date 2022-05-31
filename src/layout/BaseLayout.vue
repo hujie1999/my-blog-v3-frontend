@@ -155,7 +155,15 @@ export default {
     width:60% !important;
   }
   .aside{
-      display: none;
+      /* display: none !important; */
+    margin:0px;
+    border:0px;
+    padding:0px;
+    height:0px;
+    width:0px;
+    overflow:hidden !important;
+    z-index: -100;
+    visibility:hidden !important;
   }
 }
 /* 屏幕尺寸>768px, <992px时 --->sm*/
@@ -165,7 +173,15 @@ export default {
     width:75%;
   }
   .aside{
-      display: none;
+      /* display: none !important; */
+    margin:0px;
+    border:0px;
+    padding:0px;
+    height:0px;
+    width:0px;
+    overflow:hidden !important;
+    z-index: -100;
+    visibility:hidden !important;
   }
 }
 /* 屏幕尺寸>0px , <768px时 --->xs*/
@@ -175,7 +191,15 @@ export default {
     width:95%;
   }
   .aside{
-      display: none;
+    /* display: none !important; */
+    margin:0px;
+    border:0px;
+    padding:0px;
+    height:0px;
+    width:0px;
+    overflow:hidden !important;
+    z-index: -100;
+    visibility:hidden !important;
   }
 }
 </style>

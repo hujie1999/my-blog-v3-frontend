@@ -39,7 +39,6 @@ function throttle(bindObj, fn, delay) {
 
 //固定顶部
 function fixElement (el,vnode,delay,offset){
-	
 	vnode.$$prevTime = Date.now()
 	vnode.$$init = true
 	return function(...args) {
@@ -48,29 +47,27 @@ function fixElement (el,vnode,delay,offset){
 			vnode.$$initOffset = el.offsetTop
 			vnode.$$init = false
 		}
-
 		const nowTime = Date.now()
 		if(nowTime - vnode.$$prevTime > delay) {
-			//元素距离可视窗口顶部高度
-            
+			//元素距离可视窗口顶部高度           
 			const eleH = el.getBoundingClientRect().top
-			const scrollH = document.documentElement.scrollTop || document.body.scrollTop 
+			const scrollH = document.documentElement.scrollTop || document.body.scrollTop
+			// const dis = document.defaultView.getComputedStyle(el.parentNode.parentNode,null).getPropertyValue('display')
 			//向下滚动时判断
 			if(eleH<=0+offset){
 				el.style.position = 'fixed'
 				el.style.top = 0+offset+'px'
+				
                 el.style.width = el.parentNode.offsetWidth+'px'	
 			}
 			//向上滚动时判断
-            if( vnode.$$initOffset && scrollH<=vnode.$$initOffset){
+            if( vnode.$$initOffset && scrollH<=vnode.$$initOffset ){
 				//重置init
 				vnode.$$init = true
-
                 el.style.position = 'static'
                 el.style.top = ''
                 el.style.width = 'auto'
             }
-
 			vnode.$$prevTime = nowTime
 		}
 	}
