@@ -9,7 +9,7 @@
               <mainblock></mainblock>
           </div>
           <div class="aside" 
-          v-show="handleShowSideBar"
+          v-if="handleShowSideBar"
           >
               <asideblock></asideblock>
           </div>

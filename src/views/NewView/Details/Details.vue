@@ -417,7 +417,7 @@ export default {
   height: auto;
   font-size: 24px;
   font-weight: 600;
-  padding: 10px 0px;
+  padding: 10px 5px;
   border-bottom: 1px solid #e7ebf1;
   display: flex;
   justify-content: center;

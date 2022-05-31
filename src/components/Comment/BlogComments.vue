@@ -120,10 +120,10 @@
                 >
                   <span>回复</span>
                 </div>
-                <div class="like-area">
+                <!-- <div class="like-area">
                   <span v-text="items['Likes_Count']"></span>
                   <i class="iconfont icon-dianzan"></i>
-                </div>
+                </div> -->
               </div>
               <span v-if="items['reply'].length != 0">
                 <div
@@ -268,10 +268,10 @@
                     },2,{Parent_Person_Name: it['Comment_Person_Name']})">
                       <span>回复</span>
                     </div>
-                    <div class="like-area second-like-area">
+                    <!-- <div class="like-area second-like-area">
                       <span v-text="it['Likes_Count']"></span>
                       <i class="iconfont icon-dianzan"></i>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -723,6 +723,7 @@ export default {
   /* text-indent: 2em; */
   font-size: 13px;
   text-align: start;
+  word-break: break-all;
 }
 .comment-area .opration {
   display: flex;

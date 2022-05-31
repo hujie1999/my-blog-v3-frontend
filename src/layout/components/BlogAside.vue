@@ -32,8 +32,7 @@
             </span>
         </div>
         <div class="arranged-block"
-        v-fixElement="['scroll',100,10]"
-        >
+        v-fixElement="['scroll',100,10]">
             
             <div
             v-for="(item,index) in arranged_blogs_list"
@@ -97,7 +96,8 @@ export default {
             //广告列表
             adv_list:[],
             //展示广告位的路由
-            show_adv:['/home']
+            show_adv:['/home'],
+            loading: true
         }
     },
     computed:{
@@ -213,6 +213,7 @@ export default {
     word-wrap: break-word;
     overflow: hidden;
     margin-top: 20px;
+    display: inline-block;
 }
 
 .adv-tittle{

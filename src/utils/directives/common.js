@@ -60,14 +60,17 @@ function fixElement (el,vnode,delay,offset){
 				el.style.position = 'fixed'
 				el.style.top = 0+offset+'px'
                 el.style.width = el.parentNode.offsetWidth+'px'	
-                
 			}
 			//向上滚动时判断
-            if(scrollH<=vnode.$$initOffset){
+            if( vnode.$$initOffset && scrollH<=vnode.$$initOffset){
+				//重置init
+				vnode.$$init = true
+
                 el.style.position = 'static'
                 el.style.top = ''
-                el.style.width = 'auto'	
+                el.style.width = 'auto'
             }
+
 			vnode.$$prevTime = nowTime
 		}
 	}
