@@ -158,7 +158,9 @@ export default {
 }
 .friends-link-item:hover{
   background-color: rgba(255,255,255,0.4);
-  border: 1px solid rgba(255,255,255,0.4);  
+  border: 1px solid rgba(255,255,255,0.4);
+  /* transform: scale(1.05); */
+  /* transition: transform 0.1s; */
 }
 .link-avatar{
   box-sizing: border-box;
@@ -168,14 +170,17 @@ export default {
   overflow: hidden;
   border-radius: 30px;
   overflow: hidden;
-  border: 0.1px solid #eee;
+  /* border: 0.1px solid #eee; */
   flex-shrink: 0;
 }
 .link-avatar img{
   height: 100%;
   width: 100%;
 }
-
+.link-avatar img:hover{
+  transform: rotate(360deg);
+  transition: transform 1s;
+}
 .link-name{
   padding: 5px 0px 0px 0px;
 }

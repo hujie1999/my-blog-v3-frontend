@@ -135,7 +135,7 @@
             <el-input
             type="textarea"
             :autosize="{ minRows: 3, maxRows: 5}"
-            maxlength="300"
+            maxlength="1000"
             v-model="information"
             show-word-limit
             ></el-input>
@@ -176,7 +176,7 @@
              <el-input
             type="textarea"
             :autosize="{ minRows: 3, maxRows: 5}"
-            maxlength="300"
+            maxlength="1000"
             v-model="information"
             show-word-limit
             ></el-input>
@@ -619,9 +619,8 @@ export default {
     
 }
 .noti-list-item{
-    /* min-height: 80px;
-    max-height: 120px; */
-    height: 80px;
+    min-height: 80px;
+    height: auto;
     margin-bottom: 5px;
     width: 350px;
     /* background: blanchedalmond; */
@@ -651,12 +650,11 @@ export default {
     width: 250px;
 }
 .content-div{
-    height: 40px;
-    /* background: green; */
+    min-height: 40px;
+    height: auto;
     width: 240px;
-    display: block;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     color: gray;
     text-overflow: ellipsis;

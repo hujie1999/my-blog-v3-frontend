@@ -298,19 +298,22 @@ export default {
     //登出
     logout() {
       localStorage.removeItem("UserInfo");
-      let touristinfo = {
-        islogin: false,
-        token: "",
-        nickname: '游客'+randomId(10),
-        role: "Tourist",
-        account: randomId(15),
-        uniqueid: randomId(16),
-        avatar:"",
-      };
-      this.$store.commit("modifyUserInfo", touristinfo);
+
+      // modifyUserInfo 改为 resetUserInfo  2022.08.12 
+
+      // let touristinfo = {
+      //   islogin: false,
+      //   token: "",
+      //   nickname: '游客'+randomId(10),
+      //   role: "Tourist",
+      //   account: randomId(15),
+      //   uniqueid: randomId(16),
+      //   avatar:"",
+      // };
+      // this.$store.commit("modifyUserInfo", touristinfo);
+      this.$store.commit('resetUserInfo')
       this.$store.commit('modifyUnReadNotiCount',0)
       this.show_hiddenlist = false
-      // this.$router.history.go(0)
     },
     //注册
     regist(path){
@@ -472,14 +475,13 @@ export default {
 /* 折叠面板 */
 .hidden-list {
   text-align: center;
-  position: relative;
+  position: absolute;
   width: 100%;
   /* mavon editor z-index为2000,因此需此元素>2000才能不被遮盖 */
   z-index: 2001;
   background: #fff;
   border-radius: 0px 0px 10px 10px;
   box-shadow: 0 0 5px 0 rgb(0 0 0 / 5%);
-  position: fixed;
 }
 .hidden-list ul {
   margin: 0;

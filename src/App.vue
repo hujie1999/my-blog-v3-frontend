@@ -42,6 +42,7 @@ body,html{
   width:100%;
   height: 100%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 /* 背景图片预设参数 */
 html{

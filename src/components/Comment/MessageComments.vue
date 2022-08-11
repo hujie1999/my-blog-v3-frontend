@@ -232,12 +232,16 @@
                     >
                       用户
                     </span>
-                    <span class="identity-tag is-master"
+                    <!-- <span class="identity-tag is-master"
                     v-show="it['Father_Comment_Id']==it['Root_Comment_Id']"
                     >
                       楼主
+                    </span> -->
+                    <span class="identity-tag is-master"
+                    v-show="it['Parent_Person_Id']==items['Comment_Person_Id']"
+                    >
+                      楼主
                     </span>
-
                     <span> :</span>
                   </div>
                   <div class="time">
