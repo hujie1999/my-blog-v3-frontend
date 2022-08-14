@@ -18,7 +18,7 @@
         <div class="noti-list-item"
         v-for="(item,index) in notification"
         :key="index"
-        @click="showDetailNotification(item)"
+       
         >
             <!-- <el-badge :is-dot="item.IsRead==0?true:false" class="item-dot"> -->
             <el-badge :value="item.IsRead==0?'1':''" class="item">
@@ -35,7 +35,9 @@
             </div>
             </el-badge>
             
-            <div class="user-info">              
+            <div class="user-info"
+             @click.stop="showDetailNotification(item)"
+            >              
                 <span 
                     style="font-weight:bold"
                     >{{item.Comment_Person_Name}}
@@ -80,7 +82,8 @@
             <div class="opreation">
                 <el-popover
                     placement="bottom"              
-                    trigger="hover">
+                    trigger="click"
+                    >
                     <div>
                         <el-button plain type="info" size="mini"
                         :disabled="item.IsRead==1"
@@ -235,7 +238,8 @@ export default {
             presend:{},
             //判断 是 blog 还是 message
             condition:'',
-
+            //el-popover
+            visible:false,
 
             loading:false,
             interval:null

@@ -21,7 +21,8 @@ export default {
 
 <style scoped>
 #zone-footer{
-    background:#374046;
+    /* background:#374046; */
+    background: #24292f;
     width: 100%;
     height: 60px;
     border-radius: 4px 4px 0 0 ;

@@ -4,7 +4,7 @@ export default {
     frontendbaseapiurl:'/user',
     //图片基础路径
     // imgbaseurl:'https://xiaohai-learn.pub/image',
-    imgbaseurl:'/image',
+    imgbaseurl:'http://localhost:8889',
     
     //home页面
     home:{
