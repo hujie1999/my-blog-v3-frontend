@@ -1,7 +1,7 @@
 export default {
     //前台基础api路径
     // frontendbaseapiurl:'https://xiaohai-learn.pub/api/user',
-    frontendbaseapiurl:'/user',
+    frontendbaseapiurl:'/api/user',
     //图片基础路径
     // imgbaseurl:'https://xiaohai-learn.pub/image',
     imgbaseurl:'http://localhost:8889',

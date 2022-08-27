@@ -12,13 +12,13 @@ module.exports = {
     // assetsPublicPath: '/',
     assetsPublicPath: '/',
     proxyTable: {
-      '/user':{
+      '/api/user':{
         // target: 'http://server.xiaohai-learn.pub:8889/api/user/',
         target: 'http://localhost:8889/api/user/',
         changeOrigin: true,
         ws:true,
         pathRewrite: {
-          '^/user': ''
+          '^/api/user': ''
         }
       }
     },

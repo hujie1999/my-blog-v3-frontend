@@ -238,8 +238,6 @@ export default {
             presend:{},
             //判断 是 blog 还是 message
             condition:'',
-            //el-popover
-            visible:false,
 
             loading:false,
             interval:null
