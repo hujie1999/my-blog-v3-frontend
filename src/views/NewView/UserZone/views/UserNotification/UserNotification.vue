@@ -252,7 +252,7 @@ export default {
         caculateWidth(){
             this.interval = setInterval(() => {
                 let width = document.body.clientWidth
-                if(width<900){
+                if(width<800){
                     this.hidden_reply_block = true
                     
                 }else{
@@ -545,8 +545,8 @@ export default {
 <style scoped>
 #user-notification{
     overflow: hidden;
-    
-    height: 100%;
+    height:calc(100vh - 130px);
+    /* height: 100%; */
     width: auto;
 
     display: flex;
@@ -706,7 +706,8 @@ export default {
 }
 .notification-panel{
     width: 55%;
-    height: 100%;
+    /* height: 100%; */
+    height:calc(100vh - 130px);
     margin-left: 2px;
     
 }
@@ -767,9 +768,16 @@ export default {
 .reply-textarea-hidden::-webkit-scrollbar{
     display: none;
 }
-/* @media screen and (min-width: 0px) and (max-width: 900px) {
-  .notification-panel{
-      display: none;
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .notification-list{
+      width: 100%;
   }
-} */
+  .noti-list-item{
+      width: 98%;
+  }
+  .user-info{
+      width: 100%;
+  }
+  
+}
 </style>

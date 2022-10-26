@@ -142,8 +142,8 @@ export function addcommentcountAPI(params){
 
 //归档
 //获取博客 id，title，createtime
-export function getarrangedblogsAPI(){
-    return http.get('getarrangedblogs')
+export function getarchivesAPI(){
+    return http.get('getarchives')
 }
 
 
@@ -163,3 +163,17 @@ export function getallfriendlinkAPI(){
     return http.get('/getallfriendlink')
 }
 
+/**
+ * top views
+ * 2022.09.15
+ */
+
+//获取浏览排行
+export function gettopviewblogsAPI(){
+    return http.get('/gettopviewblogs')
+}
+
+//获取版本更新信息
+export function getversionrecordsAPI(){
+    return http.get('/getversionrecords')
+}

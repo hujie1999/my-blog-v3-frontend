@@ -9,7 +9,7 @@
               <mainblock></mainblock>
           </div>
           <div class="aside" 
-          v-if="handleShowSideBar"
+          v-show="handleShowSideBar"
           >
               <asideblock></asideblock>
           </div>
@@ -40,14 +40,13 @@ export default {
     data() {
         return {
             backgroundimgurl:'',
-            //不展示广告位(aside) 页面的path
-            unshow_adv:['/details','/about','/message','/searched']
-
+            //不展示sideBar 页面的path
+            unshow_sidebar:['/details','/about','/message','/searched','/archive']
         }
     },
     computed: {
         handleShowSideBar(){
-            return !this.unshow_adv.includes(this.$route.path)
+            return !this.unshow_sidebar.includes(this.$route.path)
         }     
     },
     components:{

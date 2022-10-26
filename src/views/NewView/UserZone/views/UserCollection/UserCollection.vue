@@ -20,7 +20,7 @@
           >
             <div
             class="collect-item"
-            @dblclick="details(item.Blog_Id)"
+            @click="details(item.Blog_Id)"
             >
                 <div class="collect-info-panel">
                     <h4>{{item.Blog_Title}}</h4>
@@ -163,12 +163,14 @@ export default {
     align-items: center;
     flex-direction: column;
 }
-/* .collect-block{
-    
-} */
+.collect-block{
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
 .collect-item{
     min-height: 80px;
-    width: 90%;
+    width: 95%;
     background: #fff;
     margin: 4px 0px;
     padding: 2px 8px;
@@ -187,9 +189,10 @@ export default {
     text-indent: 1em;
     margin:0 !important;
     padding: 0 !important;
+    cursor: pointer;
 }
 .collect-info-panel{
-    width: 80%;
+    width: auto;
     min-height: 80px;
     /* background: rgb(241, 240, 240); */   
     display: -webkit-box; 

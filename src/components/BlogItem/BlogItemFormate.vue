@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     linkToDetailes(){
-      console.log(this.blog["Blog_Id"])
+      // console.log(this.blog["Blog_Id"])
       this.$router.push({
           path: "/details",
           query: {
@@ -129,7 +129,7 @@ export default {
   text-indent: 0;
   padding: 0px 10px;
   height: 34px;
-  background: #82D8CF;
+  background: #4b7bec;
   flex: none;
   border-radius: 15px 0px 0px 15px;
   display: flex;
@@ -186,6 +186,7 @@ export default {
 .blog-tag .readmore{
   position: absolute;
   right: 10px;
+  
 }
 /* 去掉elementui，button的伪类 */
 .el-button--success.is-plain:hover{
@@ -198,5 +199,9 @@ export default {
     color: #67C23A;
     border-color: #c2e7b0;
 }
-
+.el-button--info.is-plain:hover{
+    background: #4b7bec;
+    color: #FFF;
+    border-color: #4b7bec;
+}
 </style>

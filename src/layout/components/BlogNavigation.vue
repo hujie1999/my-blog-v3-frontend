@@ -242,7 +242,8 @@ export default {
       nav: [
         { title: "首页", path: "home", iclass: "el-icon-s-home" },
         { title: "分类", path: "class", iclass: "el-icon-menu" },
-        { title: "实验室", path: "laboratory", iclass: "el-icon-price-tag" },
+        { title: "实验室", path: "laboratory", iclass: "el-icon-s-cooperation" },
+        { title: "归档", path: "archive", iclass: "el-icon-s-data" },
         { title: "留言", path: "message", iclass: "el-icon-s-comment" },
         { title: "关于", path: "about", iclass: "el-icon-s-custom" },
       ],
@@ -349,11 +350,8 @@ export default {
         }
       }
 
-    },
-
-
-
-    
+    }
+   
   },
   created() {
     this.dealPath();
@@ -365,9 +363,18 @@ export default {
       this.show_hiddenlist=false
     }));
   },
+  watch:{
+    $route:{
+      handler(val,oldval){
+        this.dealPath();
+      },
+      // 深度观察监听
+      deep: true
+    }
+  },
   beforeDestory() {
     // 因为nav全局都需展示，需要全局监听resize scroll，所以不用销毁
-  },
+  }
 };
 </script>
 

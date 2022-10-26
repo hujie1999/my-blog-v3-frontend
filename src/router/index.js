@@ -45,6 +45,15 @@ const router =  new Router({
 
         },
         {
+          path:'/archive',
+          name:'Archive',
+          meta: { 
+            keepAlive:true
+           },
+          component:()=>import('../views/Archive/Archive.vue')
+        },
+        
+        {
           path:'/message',
           name:'message',
           meta: {

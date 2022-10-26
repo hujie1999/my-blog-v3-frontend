@@ -36,7 +36,6 @@ function throttle(bindObj, fn, delay) {
 // 	}
 // }
 
-
 //固定顶部
 function fixElement (el,vnode,delay,offset){
 	vnode.$$prevTime = Date.now()
@@ -47,6 +46,7 @@ function fixElement (el,vnode,delay,offset){
 			vnode.$$initOffset = el.offsetTop
 			vnode.$$init = false
 		}
+		// console.log(vnode)
 		const nowTime = Date.now()
 		if(nowTime - vnode.$$prevTime > delay) {
 			//元素距离可视窗口顶部高度           
@@ -59,7 +59,7 @@ function fixElement (el,vnode,delay,offset){
                 el.style.width = el.parentNode.offsetWidth+'px'	
 			}
 			//向上滚动时判断
-            if( vnode.$$initOffset && scrollH<=vnode.$$initOffset ){
+            if(scrollH<=vnode.$$initOffset ){
 				//重置init
 				vnode.$$init = true
                 el.style.position = 'static'
@@ -70,7 +70,7 @@ function fixElement (el,vnode,delay,offset){
 		}
 	}
 }
- 
+
 export {
 	debounce,
 	throttle,

@@ -14,6 +14,8 @@ Vue.directive('throttle',{
 		el.addEventListener(eventname, throttle(vnode, fn, delay))
     }
 })
+// 有bug，不能绑定到 window上，因为其他页面触发scroll
+
 Vue.directive('fixElement',{
     bind(el,binding,vnode){
         //offset 自定义偏移量 设置了margin，就不用设置偏移量
